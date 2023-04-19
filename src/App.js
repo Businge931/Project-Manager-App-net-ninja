@@ -1,7 +1,29 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import Create from "./pages/create/Create";
+import ProjectDetails from "./pages/project/ProjectDetails";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Sidebar />
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/projectdetails" element={<ProjectDetails />} />
+        </Routes>
+      </div>
+    </div>
+  );
 }
 
 export default App;
